@@ -31,18 +31,6 @@
 
 /* From Login */
 
-.loginPage {
-    background-image: url('/login/login.svg');
-    background-size: cover;
-    background-position: center;
-    width: 100vw;
-    height: 100vh;
-    display: block;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-}
-
 .RegisterPage {
     background-image: url('/login/register.svg');
     background-size: cover;
@@ -57,6 +45,13 @@
 .image {
     margin-top: 26px;
     margin-bottom: 20px;
+}
+
+.containerPageRe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
@@ -202,6 +197,7 @@
 #here {
     font-weight: bold;
     color: aliceblue;
+    text-decoration: none;
 }
 
 @media only screen and (max-width: 800px) {

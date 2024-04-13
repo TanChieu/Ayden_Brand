@@ -74,32 +74,34 @@ const Register = () => {
 
     return (
         <div className={Style.Forgot}>
-            <Link href="/"><Image className={Style.image} src="/FashionNews/logo.svg" alt="logo" width={190} height={40} /></Link>
-            <div className={Style.container}>
-                <img src='/icon/lock.svg' className={Style.lock}></img><br />
-                <a id={Style.title}>Forgot Password</a><br /><br />
-                <form className={Style.bodyContent}>
-                    <label htmlFor="email" className={Style.label}>Email:</label>
-                    <input className={Style.inputE} id="email" name="email" onChange={handleEmailChange} /><br />
-                    <label htmlFor="password" className={Style.label}>Password:</label>
-                    <div className={Style.fromPassword}>
-                        <input className={Style.inputP} type={inputType1} id="password" name="password" onChange={handlePasswordChange1} />
-                        <button className={Style.eye} onClick={togglePasswordVisibility1}>{showPassword1 ? <Image src="/login/eye.svg" alt="eye" width={22} height={22} /> : <Image src="/login/eyeOff.svg" alt="eye" width={22} height={22} />}</button></div>
-                    <br />
-                    <label htmlFor="confirmPassword" className={Style.label}>Confirm Password:</label>
-                    <div className={Style.fromPassword}>
-                        <input className={Style.inputP} type={inputType2} id="confirmPassword" name="confirmPassword" onChange={handlePasswordChange2} />
-                        <button className={Style.eye} onClick={togglePasswordVisibility2}>{showPassword2 ? <Image src="/login/eye.svg" alt="eye" width={22} height={22} /> : <Image src="/login/eyeOff.svg" alt="eye" width={22} height={22} />}</button></div>
-                    {error && <div className={Style.error}>{error}</div>}<br />
-                    <div>
-                        <button className={Style.btnRe} onClick={handleSignUp}>Reset Password</button><br />
-                    </div>
-                    <br />
-                    <div className={Style.linkHere}>
-                        <img src='/icon/left.png'></img>
-                        <a href='/Login' className={Style.back}> Back to login </a>
-                    </div>
-                </form>
+            <div className={Style.containerPageFor}>
+                <Link href="/"><Image className={Style.image} src="/FashionNews/logo.svg" alt="logo" width={190} height={40} /></Link>
+                <div className={Style.container}>
+                    <img src='/icon/lock.svg' className={Style.lock}></img><br />
+                    <a id={Style.title}>Forgot Password</a><br /><br />
+                    <form className={Style.bodyContent}>
+                        <label htmlFor="email" className={Style.label}>Email:</label>
+                        <input className={Style.inputE} id="email" name="email" onChange={handleEmailChange} /><br />
+                        <label htmlFor="password" className={Style.label}>Password:</label>
+                        <div className={Style.fromPassword}>
+                            <input className={Style.inputP} type={inputType1} id="password" name="password" onChange={handlePasswordChange1} />
+                            <button className={Style.eye} onClick={togglePasswordVisibility1}>{showPassword1 ? <Image src="/login/eye.svg" alt="eye" width={22} height={22} /> : <Image src="/login/eyeOff.svg" alt="eye" width={22} height={22} />}</button></div>
+                        <br />
+                        <label htmlFor="confirmPassword" className={Style.label}>Confirm Password:</label>
+                        <div className={Style.fromPassword}>
+                            <input className={Style.inputP} type={inputType2} id="confirmPassword" name="confirmPassword" onChange={handlePasswordChange2} />
+                            <button className={Style.eye} onClick={togglePasswordVisibility2}>{showPassword2 ? <Image src="/login/eye.svg" alt="eye" width={22} height={22} /> : <Image src="/login/eyeOff.svg" alt="eye" width={22} height={22} />}</button></div>
+                        {error && <div className={Style.error}>{error}</div>}<br />
+                        <div>
+                            <button className={Style.btnRe} onClick={handleSignUp}>Reset Password</button><br />
+                        </div>
+                        <br />
+                        <div className={Style.linkHere}>
+                            <img src='/icon/left.png'></img>
+                            <a href='/Login' className={Style.back}> Back to login </a>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );

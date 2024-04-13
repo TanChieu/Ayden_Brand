@@ -59,7 +59,7 @@
     margin-bottom: 20px;
 }
 
-.Forgot {
+.containerPageFor {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,15 +72,16 @@
     height: 70vh;
     padding: 20px;
     color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     margin: auto;
     background: rgba(217, 217, 217, 0.10);
     box-shadow: 38.667px -38.667px 38.667px 0px rgba(165, 165, 165, 0.10) inset, -38.667px 38.667px 38.667px 0px rgba(255, 255, 255, 0.10) inset;
     backdrop-filter: blur(3px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
+
 
 #title {
 

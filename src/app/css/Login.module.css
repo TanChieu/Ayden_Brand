@@ -31,7 +31,7 @@
 
 /* From Login */
 .loginPage {
-    background-image: url('/login/login.svg');
+    background-image: url('/login/register.svg');
     background-size: cover;
     background-position: center;
     width: 100vw;
