@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, ChangeEvent } from 'react';
-import Style from "../css/Login.module.css";
+import Style from "../css/Register.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import axios from 'axios';
@@ -91,7 +91,7 @@ const Register = () => {
                         <input className={Style.inputP} type={inputType2} id="confirmPassword" name="confirmPassword" onChange={handlePasswordChange2} />
                         <button className={Style.eye} onClick={togglePasswordVisibility2}>{showPassword2 ? <Image src="/login/eye.svg" alt="eye" width={22} height={22} /> : <Image src="/login/eyeOff.svg" alt="eye" width={22} height={22} />}</button></div>
                 </form>
-                {error && <div className={Style.error}>{error}</div>}<br /><br /><br />
+                {error && <div className={Style.error}>{error}</div>}<br />
                 <div>
                     <button className={Style.btnSignUp} onClick={handleSignUp}>Sign up</button>
                 </div>

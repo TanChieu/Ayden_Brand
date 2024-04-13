@@ -30,17 +30,28 @@
 }
 
 /* From Login */
+
 .loginPage {
     background-image: url('/login/login.svg');
     background-size: cover;
     background-position: center;
     width: 100vw;
     height: 100vh;
-
     display: block;
     text-align: center;
     justify-content: center;
     align-items: center;
+}
+
+.Forgot {
+    background-image: url('/login/register.svg');
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    text-align: center;
+
 }
 
 .image {
@@ -48,7 +59,7 @@
     margin-bottom: 20px;
 }
 
-.containerPageLogin {
+.Forgot {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,17 +72,18 @@
     height: 70vh;
     padding: 20px;
     color: #ffffff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: auto;
     background: rgba(217, 217, 217, 0.10);
     box-shadow: 38.667px -38.667px 38.667px 0px rgba(165, 165, 165, 0.10) inset, -38.667px 38.667px 38.667px 0px rgba(255, 255, 255, 0.10) inset;
     backdrop-filter: blur(3px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 #title {
+
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-size: 30px;
@@ -156,25 +168,16 @@
 
 }
 
-.btnSignIn {
+.btnRe {
     background-color: #181a1b;
     color: #C0BAB2;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: bold;
     border: none;
     width: 50%;
-    height: 50px;
+    height: 40px;
 }
 
-.btnSignUp {
-    background-color: #181a1b;
-    color: #C0BAB2;
-    font-size: 26px;
-    font-weight: bold;
-    border: none;
-    width: 50%;
-    height: 50px;
-}
 
 .btnSignIn:hover {
     color: aliceblue;
@@ -200,15 +203,13 @@
 }
 
 @media only screen and (max-width: 800px) {
-
     .container {
-        margin-top: 10%;
         width: 70%;
         height: auto;
         display: flex;
         flex-direction: column;
-        align-items: center;
         justify-content: center;
+        align-items: center;
     }
 
     .inputE {
@@ -235,7 +236,7 @@
         justify-content: center;
     }
 
-    .btnSignIn {
+    .btnRe {
         background-color: #181a1b;
         color: #C0BAB2;
         font-size: 20px;

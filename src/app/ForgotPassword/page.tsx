@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, ChangeEvent } from 'react';
-import Style from "../css/Login.module.css";
+import Style from "../css/ForgotP.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import axios from 'axios';
@@ -73,7 +73,7 @@ const Register = () => {
     };
 
     return (
-        <div className={Style.RegisterPage}>
+        <div className={Style.Forgot}>
             <Link href="/"><Image className={Style.image} src="/FashionNews/logo.svg" alt="logo" width={190} height={40} /></Link>
             <div className={Style.container}>
                 <img src='/icon/lock.svg' className={Style.lock}></img><br />
@@ -92,7 +92,7 @@ const Register = () => {
                         <button className={Style.eye} onClick={togglePasswordVisibility2}>{showPassword2 ? <Image src="/login/eye.svg" alt="eye" width={22} height={22} /> : <Image src="/login/eyeOff.svg" alt="eye" width={22} height={22} />}</button></div>
                     {error && <div className={Style.error}>{error}</div>}<br />
                     <div>
-                        <button className={Style.btnSignUp} onClick={handleSignUp}>Reset Password</button><br />
+                        <button className={Style.btnRe} onClick={handleSignUp}>Reset Password</button><br />
                     </div>
                     <br />
                     <div className={Style.linkHere}>
