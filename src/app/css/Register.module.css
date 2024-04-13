@@ -205,14 +205,8 @@
 }
 
 @media only screen and (max-width: 800px) {
-    .containerPageLogin {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
     .container {
+        margin-top: 10%;
         width: 70%;
         height: auto;
         display: flex;
