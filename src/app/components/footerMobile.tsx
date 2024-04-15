@@ -7,7 +7,6 @@ import { FaFacebook, FaTiktok, FaYoutube } from 'react-icons/fa';
 const Footer = () => {
     return (
         <div className={footerStyles.footer}>
-
             <div className={footerStyles.Logo}>
                 <div id={footerStyles.logo1}><Image src="/FashionNews/logo.svg" width={182} height={38} alt="Logo" />
                 </div>

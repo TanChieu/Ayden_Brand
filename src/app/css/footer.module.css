@@ -87,10 +87,13 @@
     width: 40%;
     padding-top: 52px;
     padding-bottom: 74px;
-    margin-bottom: auto;
+    margin-bottom: 0;
     padding-left: 80px;
     bottom: 0;
     background-color: #35393B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
