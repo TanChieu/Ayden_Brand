@@ -34,16 +34,34 @@ const updateDataInJson = async (data: any) => {
     }
 };
 
+const deleteDataInJson = async (id: any) => {
+    try {
+        const existingData = await fs.promises.readFile(filePath, 'utf-8');
+        const jsonData = JSON.parse(existingData);
+        const existingUserIndex = jsonData.findIndex((main: any) => main.id === id);
+        if (existingUserIndex !== -1) {
+            jsonData.splice(existingUserIndex, 1);
+            await fs.promises.writeFile(filePath, JSON.stringify(jsonData, null, 2));
+        } else {
+            throw new Error('User not found');
+        }
+    } catch (error) {
+        console.error(error);
+        throw new Error('Error deleting user from JSON file');
+    }
+};
+
 export async function POST(req: Request) {
     try {
         const { id, name, description, thumbnail } = await req.json();
 
         const existingData = await fs.promises.readFile(filePath, 'utf-8');
         const pageMain = JSON.parse(existingData);
-        const main = pageMain.find((main: any) => main.id === id && main.name === name && main.description === description && main.thumbnail === thumbnail);
+        const main = pageMain.find((main: any) => main.id === id);
 
         if (main) {
             await updateDataInJson({ id, name, description, thumbnail });
+            await deleteDataInJson(id);
             return Response.json({ isLogged: true });
         }
         else {

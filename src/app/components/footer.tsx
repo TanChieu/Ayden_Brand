@@ -17,7 +17,6 @@ const Footer = () => {
                         <a id={footerStyles.lable}>CÔNG TY TNHH AYDEN TECHCO</a><br />
                         <a id={footerStyles.dateText}>Cấp ngày 21/04/2024</a></div>
                 </div>
-
             </div>
             <div className={footerStyles.group2}>
                 <div className={footerStyles.containerGroup2}>

@@ -22,62 +22,35 @@ const MainPage = () => {
     const checkIdExistence = async (id: string) => {
         try {
             const response = await axios.get(`/api/admin/main/${id}`);
-            return response.data.exists;
+            const exists = response.data.exists;
+
+            if (typeof exists === 'boolean') {
+                return exists;
+            } else {
+                console.error('Invalid response from server:', response.data);
+                return false;
+            }
         } catch (error) {
             console.error('Error checking ID existence:', error);
-
             return false;
         }
     };
 
+
     const handleSubmit = async () => {
         try {
-            if (!id) {
-                setError('ID cannot be empty.');
-                alert('ID cannot be empty.');
+            if (!id || !name || !description || !thumbnail) {
+                setError('All fields are required.');
                 return;
             }
+
             const idExists = await checkIdExistence(id);
             if (idExists) {
                 setError('ID already exists.');
-                alert('ID already exists.');
-
-            }
-            else {
-                const response = await axios.post('/api/admin/main', {
-                    id: id,
-                    name: name,
-                    description: description,
-                    thumbnail: thumbnail
-                });
-                const data = response.data;
-                console.log(data);
-                if (data.isLogged === false) {
-                    alert('Create Success');
-                }
-                else {
-                    alert('ID already exists');
-                }
-            }
-        } catch (error) {
-            console.error('Error:', error);
-        }
-    };
-    const handleUpdate = async () => {
-        try {
-            if (!id) {
-                setError('ID cannot be empty.');
-                alert('ID cannot be empty.');
-                return;
-            }
-            const idExists = await checkIdExistence(id);
-            if (!idExists) {
-                setError('ID does not exist.');
-                alert('ID does not exist.');
                 return;
             }
 
-            const response = await axios.post(`/api/admin/main`, {
+            const response = await axios.post('/api/admin/main', {
                 id: id,
                 name: name,
                 description: description,
@@ -86,7 +59,7 @@ const MainPage = () => {
             const data = response.data;
             console.log(data);
             if (data.isLogged === false) {
-                alert('Update Success');
+                alert('Create Success');
             } else {
                 alert('ID already exists');
             }
@@ -95,6 +68,58 @@ const MainPage = () => {
         }
     };
 
+    const handleUpdate = async () => {
+        try {
+            if (!id) {
+                setError('All fields are required.');
+                return;
+            }
+
+            const idExists = await checkIdExistence(id);
+            if (idExists) {
+                setError('ID already exists.');
+                return;
+            }
+
+            const response = await axios.post('/api/admin/main', {
+                id: id,
+                name: name,
+                description: description,
+                thumbnail: thumbnail
+            });
+            const data = response.data;
+            console.log(data);
+            if (data.isLogged === false) {
+
+            } else {
+                alert('Update Success');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
+    const handleDelete = async () => {
+        try {
+            if (!id) {
+                setError('ID is required.');
+                return;
+            }
+
+            const response = await axios.post('/api/admin/main', { id: id });
+
+            const data = response.data;
+            console.log(data);
+
+            if (data.success) {
+                alert('Delete Failed');
+            } else {
+
+                alert('Delete Success');
+            }
+        } catch (error) {
+            console.error('Error:', error);
+        }
+    };
     return (
         <div className={pageM.container}>
             <div className={pageM.body}>
@@ -152,7 +177,7 @@ const MainPage = () => {
                         <div className={pageM.groupButton}>
                             <button onClick={handleSubmit} className={pageM.button}>Tạo</button><br /><br />
                             <button onClick={handleUpdate} className={pageM.button}>sửa</button><br /><br />
-                            <button onClick={handleSubmit} className={pageM.button}>Xoá</button>
+                            <button onClick={handleDelete} className={pageM.button}>Xoá</button>
                         </div>
                         {error && <p>{error}</p>}
                     </div>

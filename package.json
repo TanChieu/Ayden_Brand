@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/express": "^4.17.21",
     "axios": "^1.6.8",
     "fs-extra": "^11.2.0",
     "fuse.js": "^7.0.0",
