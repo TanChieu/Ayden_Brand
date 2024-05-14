@@ -21,7 +21,7 @@ const Ran = () => {
     return (
         <div className={RLogo.container}>
             <div>
-                <div className={RLogo.title}>Gợi ý thương hiệu<br />_________</div>
+                <div className={RLogo.title}>Brand suggestions<br />_________</div>
                 <div className={RLogo.brandsLogo}>
                     {randomData.map(item => (
                         <div key={item.id} id={RLogo.item}>
